@@ -1,0 +1,20 @@
+on: push
+
+env:
+  clientId: 121a5eb2-64e2-46b2-b9a7-ca323decc717
+  tenant: b2chackhk.onmicrosoft.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: 'Upload TrustFrameworkBase Policy'
+      uses: azure-ad-b2c/deploy-trustframework-policy@v3
+      with:
+        folder: "./SocialAndLocalAccounts"
+        files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml"
+        tenant: ${{ env.tenantId }}
+        clientId: ${{ env.clientId }}
+        clientSecret: ${{ secrets.clientSecret }}
