@@ -15,6 +15,6 @@ jobs:
       with:
         folder: "./SocialAndLocalAccounts"
         files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml"
-        tenant: ${{ env.tenantId }}
+        tenant: ${{ env.tenant }}
         clientId: ${{ env.clientId }}
         clientSecret: ${{ secrets.clientSecret }}
