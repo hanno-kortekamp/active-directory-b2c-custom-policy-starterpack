@@ -92,7 +92,7 @@
   </ClaimsProviders>
 
   <UserJourneys>
-    <UserJourney Id="SignUpOrSignIn">
+    <UserJourney Id="SignUpOrSignIn1">
       <OrchestrationSteps>
 
         <OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
@@ -117,6 +117,7 @@
           <ClaimsExchanges>
             <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
             <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
+            <ClaimsExchange Id="AzureADContosoExchange" TechnicalProfileReferenceId="AADContoso-OpenIdConnect" />
           </ClaimsExchanges>
         </OrchestrationStep>
 
